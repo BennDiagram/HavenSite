@@ -1,28 +1,28 @@
 @font-face {
-    font-family: 'Virile';
-    src: url('../css/Virile\ Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Virile";
+  src: url("../css/Virile\ Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../css/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
-  font-style: normal; 
+  font-family: "Inter";
+  src: url("../css/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-style: normal;
 }
 
 :root {
-    --animation-duration: 2s;
+  --animation-duration: 2s;
 }
 
-html{
+html {
   width: 100vw;
   overflow-x: hidden;
 }
 
-.background-wrapper{
+.background-wrapper {
   background-image: url("../media/backgrounds/psychbackground_lowres.jpg");
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   background-blend-mode: overlay;
   background-attachment: scroll;
   transform-origin: bottom;
@@ -35,7 +35,7 @@ html{
   background-size: cover;
   background-position: center;
 }
- /*
+/*
 
 .background-wrapper::after {
     content: "";
@@ -52,126 +52,125 @@ html{
   
   */
 
-  body {
-    /*
+body {
+  /*
     overflow-x: hidden;
     overflow-y: scroll;
     */
-    margin: 0px;
-  }
-
-  /*Hide scrollbar*/
-  body::-webkit-scrollbar {
-    display: none; 
+  margin: 0px;
 }
 
-  html {
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-  }
+/*Hide scrollbar*/
+body::-webkit-scrollbar {
+  display: none;
+}
 
-  .flowers{
-    position: fixed;
-    top:0;
-    width: 100%;
-    pointer-events:none; 
-    z-index: 10;
-  }
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
 
-  @keyframes slideUp {
-    0% {
-        transform: translateY(100%); /* Starts offscreen, below the viewport */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* Ends in the original position */
-        opacity: 1;
-    }
+.flowers {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%); /* Starts offscreen, below the viewport */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* Ends in the original position */
+    opacity: 1;
+  }
 }
 
 .church {
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    top: 0;
-    filter: drop-shadow(0px -5px 4px #2222227a);
-    z-index: 0;
-    animation: slideUp .7s ease-out forwards; /* Apply the slide-up animation */
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  filter: drop-shadow(0px -5px 4px #2222227a);
+  z-index: 0;
+  animation: slideUp 0.7s ease-out forwards; /* Apply the slide-up animation */
 }
 
-  .church img{
-    width: 70%;
-  }
-
-  #animated-word {
-    transition: letter-spacing 0.1s ease; /* Smooth transition */
-} 
-
-  .website-title {
-    color: rgb(255,228,214);
-    font-family: "Virile";
-    font-weight: normal;
-    -webkit-text-stroke: 3px #A85050;
-    position:absolute;
-    justify-content: center;
-    letter-spacing: 0px;
-    bottom: -25vw;
-    font-size: 25vw;
-    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.473));
-  }
-
-  .section-title {
-    font-family: "inter", sans-serif;
-    text-transform: uppercase;
-    color: #210114;
-    font-weight: 800;
-    font-size: max(2rem, 3.8cqw);
-    line-height: 100%;
-    margin: 0;
-    padding: 0 0 3cqh 0;
-  }
-
-
-  .bricked-up-body {
-    height: fit-content;
-    width: 100%;
-    overflow: hidden;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(1, 1fr);
-    position: relative;
-    background-color: rgb(255, 228, 214);
-    z-index: 10;
-    background-attachment: fixed;
-    background-image: url('../media/backgrounds/tile-bricked-up.jpg'); /* Replace with the path to your image */
-    background-repeat: repeat; /* This makes the background repeat infinitely */
-    background-size: 500px; /* Set this to the size you want for each repeat tile */
+.church img {
+  width: 70%;
 }
 
+#animated-word {
+  transition: letter-spacing 0.1s ease; /* Smooth transition */
+}
 
-  .bricked-up-body img {
-    width: 500px;
-    background-repeat: repeat;
-    grid-column: 1;
-    grid-row: 1;
-  }
+.website-title {
+  color: rgb(255, 228, 214);
+  font-family: "Virile";
+  font-weight: normal;
+  -webkit-text-stroke: 3px #a85050;
+  /* position: absolute; */
+  justify-content: center;
+  letter-spacing: 0px;
+  /* bottom: -25vw; */
+  font-size: 150px;
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.473));
+  padding: 0px;
+  margin: 0px;
+}
 
+.section-title {
+  font-family: "inter", sans-serif;
+  text-transform: uppercase;
+  color: #210114;
+  font-weight: 800;
+  font-size: max(2rem, 3.8cqw);
+  line-height: 100%;
+  margin: 0;
+  padding: 0 0 3cqh 0;
+}
 
-  .event-card {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.bricked-up-body {
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  position: relative;
+  background-color: rgb(255, 228, 214);
+  z-index: 10;
+  background-attachment: fixed;
+  background-image: url("../media/backgrounds/tile-bricked-up.jpg"); /* Replace with the path to your image */
+  background-repeat: repeat; /* This makes the background repeat infinitely */
+  background-size: 500px; /* Set this to the size you want for each repeat tile */
+}
 
-    container-type: inline-size; /* need this for container query units! */
+.bricked-up-body img {
+  width: 500px;
+  background-repeat: repeat;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.event-card {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  container-type: inline-size; /* need this for container query units! */
 }
 
 .event-title {
@@ -179,53 +178,53 @@ html{
   padding: 1%;
   width: 100%;
   z-index: 9;
-  font-family: "Inter"; 
-  font-weight:bolder;
+  font-family: "Inter";
+  font-weight: bolder;
   color: #ffffff;
-  font-size: max(.5em, 5cqw);
+  font-size: max(0.5em, 5cqw);
   max-width: 1000px;
   background-color: #2222227a;
 }
 
 .event-image {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
 }
 
 .event-image img {
-    position: absolute;
-    top: 0%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .event-info {
-  box-sizing: border-box; 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.63); 
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.63);
 }
 
 .event-item {
   color: white;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: bold;
-  font-size: max(.8rem, 3cqw);
+  font-size: max(0.8rem, 3cqw);
 }
 
 #ticket-link {
-  color:#672033;
+  color: #672033;
 }
 
 .event-info a {
@@ -238,19 +237,17 @@ html{
 }
 
 .event-item {
-    text-align: center;
-    flex: 1;
-    padding: 5px;
+  text-align: center;
+  flex: 1;
+  padding: 5px;
 }
 
-
-
-
-.gallery{
+.gallery {
   width: 80vw;
   max-width: 800px;
   display: flex;
   overflow-x: scroll;
+  padding-bottom: 0;
 }
 
 .gallery div {
@@ -259,7 +256,8 @@ html{
   /*repeat applies to every column, with auto fit, and */
   grid-auto-flow: column;
   grid-auto-columns: minmax(150px, 1fr);
-  white-space: nowrap;  grid-gap: 1vw;
+  white-space: nowrap;
+  grid-gap: 1vw;
   flex: none;
 }
 
@@ -269,7 +267,7 @@ html{
   right: 0;
   color: white;
   align-items: center;
-  z-index: 2;   
+  z-index: 2;
   container-type: inline-size;
 }
 
@@ -302,12 +300,12 @@ html{
 .gallery div span:hover {
   filter: grayscale(0%);
   cursor: pointer;
-  transform: scale(1.0);
+  transform: scale(1);
   transition: 0.15s;
   z-index: 2;
- }
+}
 
-.gallery::-webkit-scrollbar{
+.gallery::-webkit-scrollbar {
   display: none;
 }
 
@@ -322,90 +320,93 @@ html{
   margin: 0;
 }
 
-.gallery-wrap #backButton{
+.gallery-wrap #backButton {
   transform: rotate(180deg);
 }
 
-.gallery-wrap #forwardButton, .gallery-wrap #backButton{
+.gallery-wrap #forwardButton,
+.gallery-wrap #backButton {
   scale: 100%;
   cursor: pointer;
   width: 7vw;
   height: 7vh;
 }
 
-
-
 .event-item:not(:last-child) {
-    border-right: 1px solid white;
+  border-right: 1px solid white;
 }
 
-  .arrow {
-    margin-bottom: 20px;
-    scale: 300%;
-    color: #989BD9;
-    /* border: solid rgb(162, 138, 201);
+.arrow {
+  margin-bottom: 20px;
+  scale: 300%;
+  color: #989bd9;
+  /* border: solid rgb(162, 138, 201);
     
     border-width: 0 3px 3px 0; */
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg); /* Set initial rotation */
-    transform-origin: rotate(45deg);
-    font-style: normal;
-    animation: bounce 1.5s infinite;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg); /* Set initial rotation */
+  transform-origin: rotate(45deg);
+  font-style: normal;
+  animation: bounce 1.5s infinite;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  
-  /* Bouncing animation */
-  @keyframes bounce {
-    0%, 100% {
-      
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(10px);
-    }
+  50% {
+    transform: translateY(10px);
   }
+}
 
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  .section-a {
-    padding: 10vh 0 10vh 0;
-  }
+.section-a {
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
 
-  .section-b {
-    padding: 0;
-  }
+.section-b {
+  padding: 0;
+}
 
-  .section-a, .section-b {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    margin: 0 auto;
-    text-align: center;
-    justify-items: center;
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 2;
-    background-color: #ffe4d6eb;
+.section-a,
+.section-b {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  justify-items: center;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+  background-color: #ffe4d6eb;
 
-    container-type: inline-size;
-  }
+  container-type: inline-size;
+}
 
-
-.section-a h2, .section-b h2 {
-    font-size: 10cqi;
-    color: #989BD9;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-family: "nexa-rust-sans-black-2", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+.section-a h2,
+.section-b h2 {
+  font-size: 10cqi;
+  color: #989bd9;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "nexa-rust-sans-black-2", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .content-background {
@@ -422,25 +423,26 @@ html{
   overflow: hidden;
 }
 
-.content p, .content a {
-    font-size: 1.5rem;
-    width: 80vw;
-    max-width: 800px;
-    font-family: "Inter";
-    font-weight: 500;
-    text-align: center;
-    margin: 0;
-    text-align: justify;
-    color: white;
+.content p,
+.content a {
+  font-size: 1.5rem;
+  width: 80vw;
+  max-width: 800px;
+  font-family: "Inter";
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  text-align: justify;
+  color: white;
 }
 
-@media (max-width:450px)
-{
-  .content p, .content a{
+@media (max-width: 450px) {
+  .content p,
+  .content a {
     font-size: 16px;
   }
 }
-  
+
 .content-background {
   width: 100%;
   padding-top: 0;
@@ -454,8 +456,8 @@ html{
 }
 
 .content-text {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 9;
   display: flex;
@@ -468,14 +470,14 @@ html{
   padding-bottom: 10vh;
 }
 
-.content-text p{
+.content-text p {
   top: -100px;
 }
 
 .content-button {
   background-color: white;
   container-type: inline-size;
-  color:#142413;
+  color: #142413;
   font-family: "inter";
   font-weight: bolder;
   font-size: min(3vw, 1rem);
@@ -494,7 +496,6 @@ html{
   text-decoration: none;
 }
 
-
 .content-button:hover {
   background-color: #ffffff00;
   color: white;
@@ -503,19 +504,20 @@ html{
 
 .link {
   color: white;
-  font-style:normal;
+  font-style: normal;
   font-weight: bold;
   text-decoration: none;
-} 
+}
 
 .content-header {
-  font-size: 35px; 
-  font-weight: bold; 
-  text-transform: uppercase; 
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
   color: #e7be47;
 }
 
-.content img, .content div {
+.content img,
+.content div {
   grid-column: 1;
   grid-row: 1;
 }
@@ -527,9 +529,12 @@ html{
   width: 100%;
   align-items: center;
   align-content: center;
-  overflow: hidden;}
+  overflow: hidden;
+}
 
-.section-header img, .section-header div, .section-header h2 {
+.section-header img,
+.section-header div,
+.section-header h2 {
   grid-column: 1;
   grid-row: 1;
 }
@@ -538,7 +543,8 @@ html{
   width: 100%;
 }
 
-.section-header div, section-header h2 {
+.section-header div,
+section-header h2 {
   position: relative;
   top: 3cqi;
   font-size: 8cqi;
@@ -549,13 +555,13 @@ html{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: 0;
   height: auto;
 }
 
 @media (max-width: 750px) {
-
-  .blurb{
+  .blurb {
     text-align: center !important;
     font-size: 4vw !important;
   }
@@ -591,37 +597,36 @@ html{
   width: 90%;
 }
 
-
-#newsletterForm input, #contactForm input{
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    min-height: 4vh;
-    font-size: 2vh;
+#newsletterForm input,
+#contactForm input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 4vh;
+  font-size: 2vh;
 }
 
-#newsletterForm button, #contactForm button {
-    padding: 10px;
-    background-color: #989BD9;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+#newsletterForm button,
+#contactForm button {
+  padding: 10px;
+  background-color: #989bd9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #newsletterForm button:hover {
-    background-color: #494c81;
+  background-color: #494c81;
 }
 
 #contactForm input {
   padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
-
-
 
 .name {
   display: flex;
@@ -632,229 +637,221 @@ html{
 #contactForm {
   display: flex;
   flex-direction: column;
-  padding:30px;
+  padding: 30px;
   width: 90%;
-
 }
 
 #responseMessage {
-    margin-top: 10px;
-    font-size: 14px;
-    color: green; /* Can also use red if showing error messages */
+  margin-top: 10px;
+  font-size: 14px;
+  color: green; /* Can also use red if showing error messages */
 }
 
-  #grad1 {
-    height: 200px;
-    background-color: red; /* For browsers that do not support gradients */
-    background-image: linear-gradient(90deg, #672033, #C87B6E, #672033);
-  }
-
-  .input-forms {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-  }
-
-  .input-forms input {
-    font-size: 100px;
-  }
-
-  .socials { 
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    
-  }
-
-  .socials img {
-    width: 10vw;
-    padding: 1vw;
-    max-width: 50px;
-  }
-
-  .copyright {
-    font-style: normal;
-  }
-
-  @media (max-width: 500px) {
-    .section-a h2, .section-b h2{
-      font-size: 10vw;
-    }
-  }
-  @keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(90deg, #672033, #c87b6e, #672033);
 }
 
+.input-forms {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
 
+.input-forms input {
+  font-size: 100px;
+}
 
+.socials {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.socials img {
+  width: 10vw;
+  padding: 1vw;
+  max-width: 50px;
+}
+
+.copyright {
+  font-style: normal;
+}
+
+@media (max-width: 500px) {
+  .section-a h2,
+  .section-b h2 {
+    font-size: 10vw;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 @keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .flower-bundleL {
-    position: absolute;
-    top: 0px;
-    width: 300px;
-    height: 300px;
-    transition: transform 0.3s ease;
-    animation: slideInLeft .5s ease-out forwards; /* Animation for left flowers */
-    transform-origin: 0% 0%;
-  }
-
-.flower-bundleR {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 300px;
-    height: 300px;
-    transition: transform 0.3s;
-    animation: slideInRight .5s ease-out forwards; /* Animation for right flowers */
-    transform-origin: 100% 0%;
-  }
-
-/* Adjust other flower-specific classes if necessary, like below */
-.flowerL, .flowerR {
-    position: fixed;
-    transform-origin: center;
-    animation: rustle-flipped var(--animation-duration) ease-in infinite;
-    animation-delay: var(--animation-delay);
-    filter: drop-shadow(0px -5px 11px #2222227a);
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.3s ease;
+  animation: slideInLeft 0.5s ease-out forwards; /* Animation for left flowers */
+  transform-origin: 0% 0%;
 }
 
-  
-  .flower1 {
-    top: -110px;
-    left: -110px;
-    transform:rotate(-110deg);
-    transform:scaleY(-1);
-    
-    z-index: 2;
-  }
+.flower-bundleR {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.3s;
+  animation: slideInRight 0.5s ease-out forwards; /* Animation for right flowers */
+  transform-origin: 100% 0%;
+}
 
-  .flower2 {
-    top: -120px;
-    left: 80px;
-    transform: scaleY(-1);
-    z-index: 1;
-  }
-  
-  .flower3 {
-    top: 5px;
-    left: 20px;
-    transform: scaleY(-1);
-    z-index: 4;
-  }
-  
-  .flower4 {
-    top: 55px;
-    left: -174px;
-    transform: rotate(-120deg);
-    transform: scaleY(-1);
-    z-index: 3;
-  }
+/* Adjust other flower-specific classes if necessary, like below */
+.flowerL,
+.flowerR {
+  position: fixed;
+  transform-origin: center;
+  animation: rustle-flipped var(--animation-duration) ease-in infinite;
+  animation-delay: var(--animation-delay);
+  filter: drop-shadow(0px -5px 11px #2222227a);
+}
 
+.flower1 {
+  top: -110px;
+  left: -110px;
+  transform: rotate(-110deg);
+  transform: scaleY(-1);
+
+  z-index: 2;
+}
+
+.flower2 {
+  top: -120px;
+  left: 80px;
+  transform: scaleY(-1);
+  z-index: 1;
+}
+
+.flower3 {
+  top: 5px;
+  left: 20px;
+  transform: scaleY(-1);
+  z-index: 4;
+}
+
+.flower4 {
+  top: 55px;
+  left: -174px;
+  transform: rotate(-120deg);
+  transform: scaleY(-1);
+  z-index: 3;
+}
 
 .flower5 {
-    top: -136px;
-    right: 100px;
-    transform: scaleY(-1);
-    z-index: 2;
+  top: -136px;
+  right: 100px;
+  transform: scaleY(-1);
+  z-index: 2;
 }
 
 .flower6 {
-    top: -110px;
-    right: -75px;
-    transform: scaleY(-1);
-    rotate: 240deg;
-    z-index: 2;
+  top: -110px;
+  right: -75px;
+  transform: scaleY(-1);
+  rotate: 240deg;
+  z-index: 2;
 }
 
 .flower7 {
-    top: 10px;
-    right: 40px;
-    transform: scaleY(-1);
-    z-index: 4;
+  top: 10px;
+  right: 40px;
+  transform: scaleY(-1);
+  z-index: 4;
 }
 
 .flower8 {
-    top: 47px;
-    right: -120px;
-    transform: scaleY(-1);
-    z-index: 3;
+  top: 47px;
+  right: -120px;
+  transform: scaleY(-1);
+  z-index: 3;
 }
 
 /* Default styling for flower-bundelL and flower-bundelR */
-.flower-bundleL, .flower-bundleR {
+.flower-bundleL,
+.flower-bundleR {
   transform: scale(1); /* Set default scale */
 }
 
 /* Apply scale of 0.5 when the window width is less than 900px */
 
-
-
 @media (max-width: 1150px) {
   .church img {
-    width:90%;
+    width: 90%;
   }
 }
 
 @media (max-width: 900px) {
   .church img {
-    width:100%;
+    width: 100%;
   }
 }
-
 
 @media (max-width: 750px) {
-  .website-title{
+  .website-title {
   }
 }
 
-@media (max-width: 500px){
-  .website-title
-  {
+@media (max-width: 500px) {
+  .website-title {
     letter-spacing: 0px;
-    -webkit-text-stroke: 2px #A85050;
+    -webkit-text-stroke: 2px #a85050;
   }
 }
 
 @keyframes rustle {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(+6deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(+6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-@keyframes rustle-flipped{
-    0% {
-        transform: rotate(0deg) scaleY(-1);
-    }
-    50% {
-        transform: rotate(+6deg) scaleY(-1);
-    }
-    100% {
-        transform: rotate(0deg) scaleY(-1);
-    }
+@keyframes rustle-flipped {
+  0% {
+    transform: rotate(0deg) scaleY(-1);
+  }
+  50% {
+    transform: rotate(+6deg) scaleY(-1);
+  }
+  100% {
+    transform: rotate(0deg) scaleY(-1);
+  }
 }
