@@ -29,7 +29,7 @@ html{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 0;
   background-size: cover;
@@ -373,10 +373,12 @@ html{
 
   .section-a {
     padding: 10vh 0 10vh 0;
+    margin: 0;
   }
 
   .section-b {
     padding: 0;
+    margin: 0;
   }
 
   .section-a, .section-b {
@@ -567,7 +569,7 @@ html{
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.551);
   width: 85vw;
-  max-width: 1000px;
+  max-width: 900px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -580,7 +582,7 @@ html{
 
 .event-line h1 {
   font-weight: bold;
-  font-size: 3cqi;
+  font-size: 2.5cqi;
   text-align: left;
   margin: 0;
 }
@@ -608,6 +610,7 @@ html{
   justify-content: center;
   width: 12%;
   font-weight: bold;
+  font-size: 2cqi;
 }
 
 .date, .tickets {
@@ -767,11 +770,7 @@ html{
     font-style: normal;
   }
 
-  @media (max-width: 500px) {
-    .section-a h2, .section-b h2{
-      font-size: 10vw;
-    }
-  }
+
   @keyframes slideInLeft {
     0% {
         transform: translateX(-100%);
