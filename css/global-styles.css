@@ -569,7 +569,7 @@ section-header h2 {
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.551);
   width: 85vw;
-  min-height: 10vh;
+  min-height: 6vh;
   max-width: 900px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -579,14 +579,14 @@ section-header h2 {
 .event-line h1,
 .event-line h2,
 .event-line {
-  font-size: 2cqi;
+  font-size: 3cqw;
   font-family: inter;
   color: black;
 }
 
 .event-line h1 {
   font-weight: bold;
-  font-size: max(4cqw);
+  font-size: max(1.3rem,4cqw);
   text-align: left;
   margin: 0;
   white-space: nowrap;
@@ -601,17 +601,19 @@ section-header h2 {
 }
 
 .event-line-info {
-  padding: 1%;
+  width: 85%;
+  padding: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2% 0;
 }
 
 .event-line-title {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
 }
 
 .event-line-title h1 {
@@ -623,14 +625,21 @@ section-header h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 12%;
+  width: 15%;
   font-weight: bold;
-  font-size: 2cqi;
+  font-size: 3cqi;
 }
-
+.event-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: left;
+  width: 95%;
+  height: fit-content;
+}
 .date,
 .tickets {
-  padding: 5%;
+  padding: 2% 0%;
   text-decoration: none;
 }
 
