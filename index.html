@@ -708,16 +708,13 @@
 
     function setActiveCard() {
         const cards = document.querySelectorAll('.new-event-card');
-        console.log("active card thing run");
 
         cards.forEach((card, i) => {
             if (i===(index+1)) { //idk why, but the center card is not the current index
                 card.style.opacity = "1";
-                console.log("CARD", i,"opacity set to 1");
             }
             else {
                 card.style.opacity = ".5";
-                console.log("CARD",i,"opacity set to 0");
             }
         })
     }
@@ -816,6 +813,7 @@
         resetInterval();
 
     }
+
 
     function resetInterval() {
         clearInterval(intervalID);
