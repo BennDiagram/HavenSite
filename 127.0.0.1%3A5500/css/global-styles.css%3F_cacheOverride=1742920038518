@@ -194,7 +194,7 @@ html {
   border: none;
   /* background-color: transparent; */
   font-size: 70px;
-  background-color: #b7868652;
+  background-color: #2222227a;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -212,8 +212,7 @@ html {
 
 .arrow-button:hover {
   opacity: 100%;
-  /*transform: scale(1.1);*/
-  background-color: #917b7bba;
+  transform: scale(1.1);
   transition: 0.3s;
 }
 
@@ -222,11 +221,11 @@ html {
 }
 
 #back-button {
-  left: -80px;
+  left: 25px;
 }
 
 #front-button {
-  right: -80px;
+  right: 25px;
 }
 
 /* 
@@ -247,8 +246,10 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 500px;
-  width: 80vw;
+  height: 400px;
+  /* width: 50vw; */
+  /* width: clamp(50vw, 80%, 80vw); */
+  width: m;
   /* flex-direction: column;
   gap: 10px;  */
   /* overflow: hidden; */
@@ -271,11 +272,10 @@ html {
   -webkit-mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    black 5%,
-    black 95%,
+    black 20%,
+    black 80%,
     rgba(0, 0, 0, 0)
   );
-
 }
 
 .events-cards-container::-webkit-scrollbar {
@@ -285,15 +285,13 @@ html {
 .new-event-card {
   display: flex;
   /* flex: 1 0 60%; */
-  width: 100%;
-  height: 90%;
+  width: 650px;
+  height: 400px;
   aspect-ratio: 1.75;
   /* Maintains the proportion */
   /* border-radius: 2vw; */
   /* border-radius: clamp(2vw, 80%, 1vw); */
   border-radius: 20px;
-  filter: drop-shadow(2px 4px 6px black);
-
   align-items: center;
   justify-content: center;
   margin: 0px 0px;

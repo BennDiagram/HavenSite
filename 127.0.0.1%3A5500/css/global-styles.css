@@ -202,7 +202,6 @@ html {
   opacity: 80%;
   color: white;
   z-index: 8;
-
   position: absolute;
   /* z-index: 2;
   position: absolute;
@@ -212,7 +211,7 @@ html {
 
 .arrow-button:hover {
   opacity: 100%;
-  /*transform: scale(1.1);*/
+  /* transform: scale(1.1); */
   background-color: #917b7bba;
   transition: 0.3s;
 }
@@ -248,7 +247,9 @@ html {
   justify-content: flex-start;
   align-items: center;
   height: 500px;
-  width: 80vw;
+  /* width: 50vw; */
+  /* width: clamp(50vw, 80%, 80vw); */
+  width: min(80vw, 1000px);
   /* flex-direction: column;
   gap: 10px;  */
   /* overflow: hidden; */
@@ -268,14 +269,14 @@ html {
   padding-bottom: 0;
 
   /* Apply a mask to fade the edges */
-  -webkit-mask-image: linear-gradient(
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), black 1%, black 99%, rgba(0, 0, 0, 0));
+  /* mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    black 5%,
-    black 95%,
+    black 20%,
+    black 80%,
     rgba(0, 0, 0, 0)
-  );
-
+  ); */
 }
 
 .events-cards-container::-webkit-scrollbar {
@@ -285,15 +286,13 @@ html {
 .new-event-card {
   display: flex;
   /* flex: 1 0 60%; */
-  width: 100%;
+  /* width: 100%; */
   height: 90%;
   aspect-ratio: 1.75;
   /* Maintains the proportion */
   /* border-radius: 2vw; */
   /* border-radius: clamp(2vw, 80%, 1vw); */
   border-radius: 20px;
-  filter: drop-shadow(2px 4px 6px black);
-
   align-items: center;
   justify-content: center;
   margin: 0px 0px;
@@ -303,6 +302,7 @@ html {
   flex-direction: column;
   /* position: absolute; */
   /* border: 1px solid black; */
+  filter: drop-shadow(2px 4px 6px black);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
