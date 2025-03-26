@@ -248,7 +248,7 @@ html {
   justify-content: flex-start;
   align-items: center;
   height: 500px;
-  width: 80vw;
+  width: min(80vw, 1000px);
   /* flex-direction: column;
   gap: 10px;  */
   /* overflow: hidden; */
@@ -271,11 +271,10 @@ html {
   -webkit-mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    black 5%,
+    black %,
     black 95%,
     rgba(0, 0, 0, 0)
   );
-
 }
 
 .events-cards-container::-webkit-scrollbar {

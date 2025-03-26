@@ -706,6 +706,19 @@
         });
     });
 
+    function setActiveCard() {
+        const cards = document.querySelectorAll('.new-event-card');
+
+        cards.forEach((card, i) => {
+            if (i===(index+1)) { //idk why, but the center card is not the current index
+                card.style.opacity = "1";
+            }
+            else {
+                card.style.opacity = ".5";
+            }
+        })
+    }
+
     function setActiveButton() {
         for (let i = 0; i < anchorsArray.length; i++) {
             if (i != index) {
@@ -728,6 +741,7 @@
     document.getElementById('front-button').addEventListener('click', moveRight);
 
     function moveLeft() {
+        setActiveCard();
         console.log("hi", backScrollLeft);
         console.log(container.scrollLeft);
         cardWidth = document.querySelector('.new-event-card').offsetWidth + 15;
@@ -757,13 +771,14 @@
         console.log(endScroll);
 
         setActiveButton();
-
+        setActiveCard();
 
         resetInterval();
 
     }
 
     function moveRight() {
+        setActiveCard();
         console.log("hi", frontScrollLeft);
         console.log(container.scrollLeft);
         cardWidth = document.querySelector('.new-event-card').offsetWidth + 15;
@@ -793,19 +808,24 @@
         console.log(container.scrollLeft);
 
         setActiveButton();
+        setActiveCard();
 
         resetInterval();
 
     }
 
+
     function resetInterval() {
         clearInterval(intervalID);
         startInterval();
+        setActiveCard();
+
     }
 
     function startInterval() {
         intervalID = setInterval(moveRight, 4000);
         console.log("interval started");
+        setActiveCard();
     }
 
 
