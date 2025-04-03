@@ -330,14 +330,18 @@
                             </p>
 
                             <form id="interestForm" class="form-container">
-                                <input class="form-box" type="text" style="width: 100%" name="firstName"
-                                    placeholder="Band/Artist Name" required></label>
+                                <input class="form-box" type="text" name="firstName" placeholder="Band/Artist Name"
+                                    required></label>
                                 <input class="form-box" type="email" id="email" name="email"
                                     placeholder="Enter your email" required>
                                 <input class="form-box" type="link" id="link" name="link"
                                     placeholder="Link to your music" optional>
+
                                 <textarea class="form-box" name="message" placeholder="Enter your message here!"
                                     required></textarea></label>
+                                <input class="form-box" type="text" name="dates"
+                                    placeholder="Please provide some possible dates that you would like to have your show on."
+                                    required></label>
                                 <button type="submit" id="feedbackMessage">Submit</button>
                             </form>
                             <p id="responseMessage"></p>
@@ -557,6 +561,7 @@
 
 
         const formData = new FormData(e.target);
+        console.log('formData,', JSON.stringify(Object.fromEntries(formData)));
         fetch(artistScriptURL, { method: "POST", body: JSON.stringify(Object.fromEntries(formData)), })
             .then(response => {
                 alert("Message Submitted!")
