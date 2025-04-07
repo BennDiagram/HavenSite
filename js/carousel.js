@@ -197,9 +197,17 @@ eventBackButton.addEventListener('click', moveLeft);
 
 eventFrontButton.addEventListener('click', moveRight);
 
+container.addEventListener("wheel", function (event) {
+    if (event.deltaX !== 0) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
 
 // Create a manager to manager the element
-var manager = new Hammer.Manager(container);
+var manager = new Hammer.Manager(container, {
+    touchAction: 'pan-y'
+});
 
 // var Tap = new Hammer.Tap();
 // manager.add(Tap);
