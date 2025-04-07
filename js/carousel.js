@@ -197,11 +197,6 @@ eventBackButton.addEventListener('click', moveLeft);
 
 eventFrontButton.addEventListener('click', moveRight);
 
-container.addEventListener("wheel", function (event) {
-    if (event.deltaX !== 0) {
-        event.preventDefault(); // Block horizontal scrolling
-    }
-}, { passive: false }); // Important to allow `preventDefault()`
 
 // Create a manager to manager the element
 var manager = new Hammer.Manager(container);
@@ -225,13 +220,25 @@ var deltaY = 0;
 // Subscribe to a desired event
 //2 is forward, 4 is backward
 manager.on('swipe', function (e) {
-    deltaX = deltaX + e.deltaX;
     var direction = e.offsetDirection;
-    // //     console.log("direction of swipe", direction);
-    if (direction === 2) {
-        moveRight();
-    } else if (direction === 4) {
-        moveLeft();
+
+    // Check if swipe is horizontal (left/right) or vertical (up/down)
+    if (e.deltaX !== 0 && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        // Horizontal swipe
+        if (direction === 2) {
+            moveRight();
+        } else if (direction === 4) {
+            moveLeft();
+        }
+    } else if (e.deltaY !== 0 && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        // Vertical swipe
+        if (direction === 8) {
+            // Swipe up - scroll up
+            window.scrollBy({ top: -window.innerHeight / 2, behavior: 'smooth' });
+        } else if (direction === 16) {
+            // Swipe down - scroll down
+            window.scrollBy({ top: window.innerHeight / 2, behavior: 'smooth' });
+        }
     }
 });
 
