@@ -203,6 +203,8 @@ container.addEventListener("wheel", function (event) {
     }
 }, { passive: false }); // Important to allow `preventDefault()`
 
+// container.addEventListener("wheel");
+
 // Create a manager to manager the element
 var manager = new Hammer.Manager(container);
 
@@ -228,27 +230,27 @@ manager.on('swipe', function (e) {
     deltaX = deltaX + e.deltaX;
     var direction = e.offsetDirection;
     console.log("direction of swipe", direction);
-        console.log("direction of swipe", direction);
+    console.log("direction of swipe", direction);
     if (direction === 2) {
         moveRight();
     } else if (direction === 4) {
         moveLeft();
     }
     else if (direction === 8 || direction === 16) {
-    
+        console.log("vertical swipes?");
     }
 });
 
 
 
 function moveLeft() {
-        console.log("scroll left called");
+    console.log("scroll left called");
     cardWidth = document.querySelector('.new-event-card').offsetWidth + 15;
     backScrollLeft = document.querySelector("#first-card").offsetLeft;
     frontScrollLeft = document.querySelector("#last-card").offsetLeft - cardWidth;
 
     if (container.scrollLeft <= backScrollLeft) {
-              console.log("here");
+        console.log("here");
         index = anchorsArray.length - 1;
     }
     else {

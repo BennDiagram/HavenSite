@@ -305,7 +305,7 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 0;
-  touch-action: pan-y;
+  touch-action: none;
 
   /* Apply a mask to fade the edges */
   -webkit-mask-image: linear-gradient(
