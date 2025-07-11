@@ -197,12 +197,6 @@ eventBackButton.addEventListener('click', moveLeft);
 
 eventFrontButton.addEventListener('click', moveRight);
 
-container.addEventListener("wheel", function (event) {
-    if (event.deltaX == 0) {
-        event.preventDefault(); // Block horizontal scrolling
-    }
-}, { passive: false }); // Important to allow `preventDefault()`
-
 // Create a manager to manager the element
 var manager = new Hammer.Manager(container);
 
@@ -321,5 +315,14 @@ function scrollToStudio() {
     }
 }
 
+// Fix for vertical scrolling getting "stuck" when hovering over the carousel
+const scrollContainer = document.querySelector('.event-cards-container');
 
-
+if (scrollContainer) {
+  scrollContainer.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+    }
+  }, { passive: false });
+}

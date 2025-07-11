@@ -282,88 +282,52 @@ html {
 
 .event-cards-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 400px;
-  /* width: 50vw; */
-  /* width: clamp(50vw, 80%, 80vw); */
-  width: 750px;
-  /* flex-direction: column;
-  gap: 10px;  */
-  /* overflow: hidden; */
-  /* overflow-x: auto; */
-  white-space: nowrap;
-  /* flex-shrink: 0; */
+  flex-direction: row;
   gap: 15px;
-  position: relative;
-  z-index: 1;
-  /* flex-wrap: nowrap; */
-  overflow-x: scroll;
+  height: 400px;
+  width: 750px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding: 0;
+
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;               /* ✅ allow vertical scroll */
+  overscroll-behavior-y: contain;   /* ✅ allow scroll to pass through */
+
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-bottom: 0;
-  touch-action: pan-y;
 
-  /* Apply a mask to fade the edges */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    black 5%,
-    black 95%,
-    rgba(0, 0, 0, 0)
-  );
-  mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    black 5%,
-    black 95%,
-    rgba(0, 0, 0, 0)
-  );
+  mask-image: linear-gradient(to right, rgba(0,0,0,0), black 5%, black 95%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), black 5%, black 95%, rgba(0,0,0,0));
 }
 
-.events-cards-container::-webkit-scrollbar {
+.event-cards-container::-webkit-scrollbar {
   display: none;
 }
 
-/* #home {
-  scroll-margin-top: 50px;
-}
-
-@media screen and (max-width: 500px) {
-  #home {
-    scroll-margin-top: 100px;
-  }
-} */
-
 .new-event-card {
-  display: flex;
-  /* flex: 1 0 60%; */
+  flex: 0 0 auto;
   width: 650px;
   height: 400px;
-  aspect-ratio: 1.75;
-  /* Maintains the proportion */
-  /* border-radius: 2vw; */
-  /* border-radius: clamp(2vw, 80%, 1vw); */
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 0px;
-  padding: 0px 0px;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  filter: drop-shadow(2px 4px 6px black);
-
   scroll-snap-align: center;
-  flex-direction: column;
-  /* position: absolute; */
-  /* border: 1px solid black; */
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(2px 4px 6px black);
 }
+
 
 .new-event-title {
   position: absolute;
