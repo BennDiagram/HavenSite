@@ -72,11 +72,11 @@ async function fetchEventsForSlideshow() {
         // sort events by date and get the next 3
         const sortedEvents = sortEventsByDate(data);
         const upcomingEvents = getUpcomingEvents(sortedEvents);
-        const nextTwoEvents = upcomingEvents.slice(0, 2);
+        const nextThreeEvents = upcomingEvents.slice(0, 3);
 
-        if (nextTwoEvents.length > 0) {
+        if (nextThreeEvents.length > 0) {
             // update slideshow with the upcoming events
-            updateSlideshow(nextTwoEvents);
+            updateSlideshow(nextThreeEvents);
             // updateMainEventCard(nextThreeEvents[0]);
         } else {
             //             console.log("No upcoming events to display in slideshow");
@@ -152,8 +152,8 @@ function updateSlideshow(events) {
         return;
     }
 
-    // const cardsToPopulate = ["event-1", "event-3", "event-4"];
-    const cardsToPopulate = ["event-1", "event-4"];
+    const cardsToPopulate = ["first-card", "event-2", "event-4"];
+    // const cardsToPopulate = ["event-1", "event-4"];
 
     //     // console.log("Looking for IDs:", cardsToPopulate);
     // cardsToPopulate.forEach(id => {
