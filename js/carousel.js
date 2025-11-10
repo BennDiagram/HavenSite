@@ -228,27 +228,27 @@ manager.on('swipe', function (e) {
     deltaX = deltaX + e.deltaX;
     var direction = e.offsetDirection;
     console.log("direction of swipe", direction);
-        console.log("direction of swipe", direction);
+    console.log("direction of swipe", direction);
     if (direction === 2) {
         moveRight();
     } else if (direction === 4) {
         moveLeft();
     }
     else if (direction === 8 || direction === 16) {
-    
+
     }
 });
 
 
 
 function moveLeft() {
-        console.log("scroll left called");
+    console.log("scroll left called");
     cardWidth = document.querySelector('.new-event-card').offsetWidth + 15;
     backScrollLeft = document.querySelector("#first-card").offsetLeft;
     frontScrollLeft = document.querySelector("#last-card").offsetLeft - cardWidth;
 
     if (container.scrollLeft <= backScrollLeft) {
-              console.log("here");
+        console.log("here");
         index = anchorsArray.length - 1;
     }
     else {
@@ -318,6 +318,24 @@ function scrollToStudio() {
     if (target) {
         target.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
         history.replaceState(null, null, "#studio"); // Update URL without reloading
+    }
+}
+
+function scrollToAbout() {
+    const target = document.querySelector("#about");
+
+    if (target) {
+        target.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+        history.replaceState(null, null, "#about"); // Update URL without reloading
+    }
+}
+
+function scrollToFAQ() {
+    const target = document.querySelector("#faqs");
+
+    if (target) {
+        target.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+        history.replaceState(null, null, "#faqs"); // Update URL without reloading
     }
 }
 

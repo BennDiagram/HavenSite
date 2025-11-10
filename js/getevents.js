@@ -109,12 +109,9 @@ async function fetchEventsForEventsList() {
         //used to test for when there are no events
         // const test = [];
 
-        if (nextThreeEvents.length > 0) {
-            // update slideshow with the upcoming events
-            updateEventsList(nextThreeEvents);
-        } else {
-            //             console.log("No upcoming events to display in slideshow");
-        }
+        // update slideshow with the upcoming events
+        updateEventsList(nextThreeEvents);
+
     }
     catch (error) {
         console.error("Error fetching event data for slideshow:", error);
@@ -311,7 +308,7 @@ function updateEventsList(events) {
     }
 
     if (events.length === 0) {
-        eventListContainer.innerHTML = '<div style="text-align: center; padding: 40px; font-size: 2vw; font-family: \'Inter\'; font-weight: 450;">No upcoming events at this time. Check back soon!</div>';
+        eventListContainer.innerHTML = '<div style="text-align: center; padding: 40px; font-size: 1.5vw; font-family: \'Inter\'; font-weight: 450; font-style: italic;color: black;">No upcoming events at this time. Check back soon!</div>';
         return;
     }
 
